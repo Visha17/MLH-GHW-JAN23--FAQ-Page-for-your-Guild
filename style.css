@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+:root {
+	--colorMainBlue: #3a5a40;
+	--colorDarkBlue: #588157;
+	--colorDarkerBlue: #a3b18a;
+	--colorRed: #cad2c5;
+	--colorDarkRed: #354f52;
+	--textTitle: #22223b;
+	--textMain: #353535;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body {
+	max-width: 100vw;
+	height: 100vh;
+	display: block;
+	background-color: var(--colorMainBlue);
+	color: var(--textMain);
+}
+
+h1 {
+	font-size: 4rem;
+	color: var(--textTitle);
+	margin-bottom: 20px;
+	font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.1rem;
+  text-align: center;
+}
+
+h2 {
+	font-size: 32px;
+	color: var(--textTitle);
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 30px;
+	color: var(--colorVariant);
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1.6rem;
+	line-height: 2.5rem;
+	font-weight: 600;
+}
+
+h4 span {
+	font-size: 3rem;
+  letter-spacing: 0.6rem;
+  text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+	color: var(--textTitle);
+}
+
+.hdivider {
+	background-color: var(--colorDarkRed);
+	height: 4px;
+	width: 120px;
+	margin-bottom: 20px;
+	border-radius: 50px;
+}
+
+.pages {
+	display: block;
+	align-items: center;
+	height:100vh;
+	padding: 5% 5%;
+}
+
+/*///////////// LANDING //////////////*/
+
+.landing {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	max-width: 100vw;
+  text-align: center;
+}
+
+.hero-img {
+	width: 50%;
+	max-width: 500px;
+	height: auto;
+	margin: 5%;
+}
+
+.landing-info {
+	text-align: center;
+}
+
+.registration {
+	margin: 20px 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*///////////// FAQ ////////////*/
+
+#faq {
+	background-color: var(--colorDarkBlue);
+	margin-bottom: 0;
+}
+.faq-header h1 {
+  border-bottom: #86654C 4px solid;
+  border-radius: 2px;
+  padding-left: 14px;
+  padding-bottom: 15px;
+}
+.faq-header{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-text {
+	font-size: 18px;
+}
+.faq-intro {
+	padding: 2% 0;
+	line-height: 1.8;
+}
+
+.faq-main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.faq-tab {
+	position: relative;
+	padding: 8px;
+	max-width: 700px;
+}
+
+input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+}
+
+.question h3 {
+	background: var(--colorDarkRed);
+	color: var(--textTitle);
+	position: relative;
+	border-radius: 4px;
+	margin-bottom: 0px;
+	box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.1);
+	font-size: 20px;
+}
+
+.question h3:hover {
+	background-color: var(--colorRed);
+	transition: 0.15s ease-in-out;
+}
+
+.question h3:hover .fa.fa-arrow-right {
+	color: var(--colorDarkRed);
+	transition: 0.15s ease-in-out;
+}
+
+label::before {
+	content: "";
+	display: none;
+	border: 15px solid transparent;
+	border-left: 20px solid white;
+}
+
+label {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.fa.fa-arrow-right {
+	color: var(--colorRed);
+}
+
+.answer {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+	background-color: var(--colorDarkerBlue);
+	box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.answer p {
+	padding: 2em;
+}
+
+input:checked~.question label::before {
+	border-left: 15px solid transparent;
+	border-top: 20px solid white;
+	margin-top: 12px;
+	margin-right: 10px;
+}
+
+input:checked~.question~.answer {
+	max-height: 400px;
+}
+
+input:checked+.question h3 {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background: var(--colorRed);
+	transition: 0.3s ease-in-out;
+}
+
+input:checked~.question .fa.fa-arrow-right {
+	color: var(--colorDarkRed);
+	transform: rotate(90deg);
+	transition: 0.4s ease-in-out;
+}
+
+/*//////////// FOOTER ///////////*/
+footer {
+	text-align: center;
+	justify-content: center;
+	font-size: 12px;
+}
+
+footer p {
+	background-color: var(--colorDarkerBlue);
+	padding: 10px;
+}
